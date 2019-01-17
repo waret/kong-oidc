@@ -69,6 +69,7 @@ end
 
 function M.injectAccessToken(accessToken)
   ngx.req.set_header("X-Access-Token", accessToken)
+  ngx.req.set_header("Authorization", "Bearer " .. accessToken)
 end
 
 function M.injectIDToken(idToken)
